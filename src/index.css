@@ -1,0 +1,210 @@
+/* reset.css */
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+    list-style: none;
+}
+
+ul,
+li {
+    list-style: none;
+}
+
+/* Set core root defaults */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+    min-height: 100vh;
+    text-rendering: optimizeSpeed;
+    line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+    text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+/* Remove all animations and transitions for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* Reset some styling for input elements */
+input[type='search'] {
+    appearance: none;
+    outline-offset: -2px;
+}
+
+/* Reset native display elements to be block elements */
+[hidden] {
+    display: none !important;
+}
+
+/* Remove spacing before and after paragraphs */
+p {
+    margin: 0;
+}
+
+/* Reset margin on images */
+figure {
+    margin: 0;
+}
+
+/* Reset padding on lists */
+ol,
+ul {
+    padding: 0;
+}
+
+/* Reset list styles */
+button,
+html [type='button'],
+[type='reset'],
+[type='submit'] {
+    -webkit-appearance: button;
+}
+
+/* Reset quote styling */
+blockquote {
+    quotes: none;
+    margin: 0;
+}
+
+/* Reset table styling */
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* Reset default button styling */
+button,
+input,
+optgroup,
+select,
+textarea {
+    margin: 0;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+
+/* Reset inherit on details elements */
+details {
+    display: block;
+}
+
+/* Style adjustments for iOS */
+/* Remove the margin in Safari */
+body {
+    margin: 0;
+}
+
+/* Improve consistency of default fonts in all browsers */
+/* Corrects font size not being inherited in all browsers */
+code,
+kbd,
+samp,
+pre {
+    font-family: monospace, monospace;
+    font-size: 1em;
+}
+
+button {
+    background: none;
+    border: none;
+    outline: none;
+}
+
+/* Remove the inheritance of text transform in Edge and Firefox */
+/* Remove the inheritance of text transform in Firefox */
+button,
+select {
+    text-transform: none;
+}
+
+/* Reset buttons and select elements to the same baseline in all browsers */
+button,
+input,
+select,
+textarea {
+    padding: 0;
+    line-height: inherit;
+    color: inherit;
+}
+
+/* Correct overflow not being hidden in IE 9/10/11 */
+button,
+input {
+    overflow: hidden;
+}
+
+/* Reset the cursor style of buttons in Safari */
+button,
+a [role='button'] {
+    cursor: pointer;
+}
+
+/* Prevent a webkit bug where (2) destroys native 'audio' and 'video' controls in Android 4 */
+audio,
+canvas,
+video {
+    display: inline-block;
+}
+
+/* Remove border on iframes */
+iframe {
+    border: 0;
+}
+
+/* Add a correct display in IE 9/10/11 */
+details,
+menu {
+    display: block;
+}
+
+/* Remove the default vertical scrollbar in IE 10/11 */
+blockquote {
+    overflow: hidden;
+}
+
+/* Add the correct vertical scrollbar in Edge */
+textarea {
+    overflow: auto;
+}
+
+/* Remove the resize handle on textareas that prevents text from being selectable in IE 10/11 */
+textarea {
+    resize: vertical;
+}

@@ -1,0 +1,96 @@
+body {
+  font-family: Pretendard, sans-serif !important;
+}
+
+.carousel-control-next,
+.carousel-control-prev {
+  filter: invert(100%);
+}
+
+button:focus,
+button:active,
+button:hover,
+input:focus,
+input:active,
+input:hover,
+textarea:focus,
+textarea:active,
+textarea:hover,
+.btn:focus,
+.btn:active,
+.btn:hover,
+.page-link:focus,
+.page-link:active,
+.page-link:hover {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+button:disabled,
+.btn:disabled {
+  cursor: not-allowed;
+  pointer-events: auto !important;
+}
+
+.btn {
+  white-space: nowrap;
+}
+
+.dropdown-menu {
+  z-index: 10 !important;
+}
+
+tbody {
+  border-top: none !important;
+}
+
+th,
+td {
+  white-space: nowrap;
+  font-weight: normal;
+}
+
+blockquote {
+  border-left: 5px solid #ccc;
+  padding-right: 1.5em;
+  padding-left: 1.5em;
+  overflow: hidden;
+  font-style: italic;
+}
+
+.modal {
+  z-index: 55 !important;
+}
+
+.modal-backdrop {
+  z-index: 50 !important;
+}
+
+.modal ~ .modal {
+  z-index: 65 !important;
+}
+
+.modal-backdrop ~ .modal-backdrop {
+  z-index: 60 !important;
+}
+
+.bi {
+  margin-right: 0.3125rem;
+}
+
+.loading-light {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.loading-dark {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #2f3243;
+  width: 100%;
+  height: 100%;
+}

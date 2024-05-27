@@ -1,0 +1,19 @@
+.ck-editor__editable {
+  min-height: 0;
+}
+
+/* Prism 테마 제거 */
+.ck-editor__editable pre code {
+  color: #353535 !important;
+}
+
+pre.editor-code {
+  margin-bottom: 0.75rem;
+  background-color: #1e1e1e;
+  padding: 0.9375rem;
+  line-height: 1.3125rem !important;
+}
+
+pre.editor-code code {
+  font-size: 0.875rem !important;
+}

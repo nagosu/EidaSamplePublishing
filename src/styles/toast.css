@@ -1,0 +1,23 @@
+.Toastify__toast-container {
+  right: 0.5rem;
+  margin-top: 5rem;
+}
+
+.Toastify__toast-body {
+  font-size: 0.875rem;
+}
+
+.Toastify__toast-body > div > .eduenv-toast-title {
+  line-height: 1.5;
+  font-size: 1rem;
+}
+
+.Toastify__toast-body > div > .eduenv-toast-content {
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 0.875rem;
+}
+
+.Toastify__toast-body > div > .eduenv-toast-content .btn {
+  margin-top: 1rem;
+  width: 100%;
+}

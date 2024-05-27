@@ -1,0 +1,38 @@
+/* CK Editor > View > 이미지 */
+figure.image {
+  display: flex;
+  justify-content: center;
+  margin-right: auto;
+  margin-bottom: 1rem;
+  margin-left: auto;
+}
+
+figure.image.image_resized {
+  max-width: 100%;
+}
+
+/* CK Editor > View > 테이블 */
+figure.table thead {
+  background-color: #f8f9fa;
+  font-size: 0.875rem;
+}
+
+figure.table tbody {
+  font-size: 0.8125rem;
+}
+
+/* 복사 버튼 */
+button.btn-clipboard {
+  position: absolute;
+  top: 0.9375rem;
+  right: 0.9375rem;
+  transition: all 0.2s ease-in-out;
+  opacity: 0;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.625rem;
+}
+
+button.btn-clipboard:hover::after {
+  padding-left: 0.25rem;
+  content: attr(data-message);
+}
