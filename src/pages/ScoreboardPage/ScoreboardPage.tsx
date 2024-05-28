@@ -10,6 +10,8 @@ import profileImage from "/assets/images/profile_img.svg";
 import charImage from "/assets/images/char.svg";
 import starIcon from "/assets/images/star_yellow.svg";
 import searchIcon from "/assets/images/search.png";
+import timeIcon from "/assets/images/time.svg";
+import pointIcon from "/assets/images/point.svg";
 
 const graphScore1 = [[0.8, 0.6, 0.7, 0.5, 0.9]];
 const graphScore2 = [[0.5, 0.7, 0.6, 0.4, 0.8]];
@@ -353,6 +355,8 @@ const BattlePage = () => {
     setIsCheck((prev) => !prev);
   };
 
+  const userWithRank1 = USERS.find((user) => user.info.rank === "1");
+
   return (
     <div css={styles.wrap}>
       <div css={styles.container}>
@@ -435,25 +439,134 @@ const BattlePage = () => {
             </div>
             <div css={styles.scoreContainer}>
               <div css={styles.scoreList}>
-                <div css={styles.scoreItem}>
-                  <div css={styles.scoreItemContent}>
-                    <div css={styles.scoreItemContentHeader}>
-                      <div css={styles.starContainer}>
-                        <img src={starIcon} alt='Star Icon' />
-                        <span css={styles.starRate}>1</span>
+                {userWithRank1?.info.scores.map((score, idx) => (
+                  <div key={idx} css={styles.scoreItem}>
+                    <div css={styles.scoreItemContent}>
+                      <div css={styles.scoreItemContentHeader}>
+                        <div css={styles.starContainer}>
+                          <img src={starIcon} alt='Star Icon' />
+                          <span css={styles.starRate}>{score.star}</span>
+                        </div>
+                        <img css={styles.searchIcon} src={searchIcon} alt='' />
                       </div>
-                      <img css={styles.searchIcon} src={searchIcon} alt='' />
+                      <div css={styles.scoreTextContainer}>
+                        <div css={styles.scoreText}>
+                          <span css={styles.scoreTextMain}>{score.score1}</span>
+                          <span css={styles.scoreTextSub}>{score.score2}</span>
+                        </div>
+                      </div>
                     </div>
-                    <div css={styles.scoreTextContainer}>
-                      <div css={styles.scoreText}>
-                        <span css={styles.scoreTextMain}>1</span>
-                        <span css={styles.scoreTextSub}>1</span>
+                    <div css={styles.scoreItemFooter}>
+                      <span css={styles.time}>{score.time}</span>
+                    </div>
+                  </div>
+                ))}
+                <div css={styles.totalScoreContainer}>
+                  <div css={styles.totalScoreTextContainer}>
+                    <span css={styles.totalScoreText}>Score</span>
+                    <span css={styles.totalScoreNumber}>340</span>
+                  </div>
+                </div>
+              </div>
+              <div css={styles.timePointResult}>
+                <div css={styles.timeContainer}>
+                  <div css={styles.timeIconContainer}>
+                    <img src={timeIcon} alt='' />
+                  </div>
+                  <span css={styles.timeText}>총 소요시간</span>
+                  <span css={styles.timeNumber}>40:25</span>
+                </div>
+                <div css={styles.pointContainer}>
+                  <span css={styles.pointText}>획득 포인트</span>
+                  <span css={styles.pointNumber}>700</span>
+                  <div css={styles.pointIconContainer}>
+                    <img src={pointIcon} alt='' />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div css={styles.graphContainer}>
+            <div css={styles.testGraphContainer}>
+              <div css={styles.testGraphHeader}>
+                <span css={styles.testGraphTitle}>2월 테스트 그래프</span>
+                <div css={styles.monthContainer}>
+                  <div css={styles.monthItem}>
+                    <div css={styles.monthColorFirst}></div>
+                    <span css={styles.monthText}>2월</span>
+                  </div>
+                  <div css={styles.monthItem}>
+                    <div css={styles.monthColorSecond}></div>
+                    <span css={styles.monthText}>11월</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div css={styles.areaLevelContainer}>
+              <div css={styles.areaLevelHeader}>
+                <div css={styles.areaHeader}>
+                  <span css={styles.headerText}>AREA(영역)</span>
+                </div>
+                <div css={styles.levelHeader}>
+                  <span css={styles.headerText}>LEVLE(수준)</span>
+                </div>
+              </div>
+              <div css={styles.areaLevelContent}>
+                <div css={styles.areaContainer}>
+                  <div css={styles.areaAbilityContainer}>
+                    <span css={styles.areaText}>ABILITY</span>
+                  </div>
+                  <div css={styles.areaSkillContainer}>
+                    <span css={styles.areaText}>SKILL</span>
+                  </div>
+                </div>
+                <div css={styles.areaSubContainer}>
+                  <div css={styles.areaSubItemContainer}>
+                    <span css={styles.areaSubItemText}>Lagical</span>
+                  </div>
+                  <div css={styles.areaSubItemContainer}>
+                    <span css={styles.areaSubItemText}>Program solving</span>
+                  </div>
+                  <div css={styles.areaSubItemContainer}>
+                    <span css={styles.areaSubItemText}>System</span>
+                  </div>
+                  <div css={styles.areaSubItemContainer}>
+                    <span css={styles.areaSubItemText}>Lagical</span>
+                  </div>
+                  <div css={styles.areaSubItemContainer}>
+                    <span css={styles.areaSubItemText}>Program solving</span>
+                  </div>
+                </div>
+                <div css={styles.areaScoreContainer}>
+                  <div css={styles.areaScoreItemContainer}>
+                    <span css={styles.areaScoreItemText}>100</span>
+                  </div>
+                  <div css={styles.areaScoreItemContainer}>
+                    <span css={styles.areaScoreItemText}>75</span>
+                  </div>
+                  <div css={styles.areaScoreItemContainer}>
+                    <span css={styles.areaScoreItemText}>80</span>
+                  </div>
+                  <div css={styles.areaScoreItemContainer}>
+                    <span css={styles.areaScoreItemText}>75</span>
+                  </div>
+                  <div css={styles.areaScoreItemContainer}>
+                    <span css={styles.areaScoreItemText}>88</span>
+                  </div>
+                </div>
+                <div css={styles.levelContainer}>
+                  <div css={styles.levelItemContainer}>
+                    <div css={styles.sliderContainer}>
+                      <div css={styles.sliderTrack}></div>
+                      <div css={styles.sliderThumb}>
+                        <span css={styles.sliderThumbNumber}>100</span>
                       </div>
                     </div>
                   </div>
-                  <div css={styles.scoreItemFooter}>
-                    <span css={styles.time}></span>
-                  </div>
+                  <div css={styles.levelItemContainer}></div>
+                  <div css={styles.levelItemContainer}></div>
+                  <div css={styles.levelItemContainer}></div>
+                  <div css={styles.levelItemContainer}></div>
                 </div>
               </div>
             </div>

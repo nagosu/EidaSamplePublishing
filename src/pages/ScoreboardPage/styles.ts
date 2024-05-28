@@ -378,6 +378,376 @@ const styles = {
     letter-spacing: normal;
     color: #000;
   `,
+  totalScoreContainer: css`
+    width: 89px;
+    height: 140px;
+    border-radius: 5px;
+    background-color: #08f;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  `,
+  totalScoreTextContainer: css`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+  `,
+  totalScoreText: css`
+    opacity: 0.8;
+    font-family: "Pretendard";
+    font-size: 12px;
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #fff;
+  `,
+  totalScoreNumber: css`
+    font-family: "Pretendard";
+    font-size: 20px;
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #fff;
+  `,
+  timePointResult: css`
+    width: 100%;
+    height: 40px;
+    padding-left: 15px;
+    padding-right: 15px;
+    border-radius: 5px;
+    background-color: #c9e2ff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  `,
+  timeContainer: css`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  `,
+  timeIconContainer: css`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 16px;
+    height: 16px;
+    margin-right: 5px;
+  `,
+  timeText: css`
+    font-family: "Pretendard";
+    font-size: 14px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 2.14;
+    letter-spacing: normal;
+    color: #000;
+    margin-right: 10px;
+  `,
+  timeNumber: css`
+    font-family: "Pretendard";
+    font-size: 14px;
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 2.14;
+    letter-spacing: normal;
+    color: #000;
+  `,
+  pointContainer: css`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  `,
+  pointText: css`
+    font-family: "Pretendard";
+    font-size: 14px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 2.14;
+    letter-spacing: normal;
+    color: #000;
+    margin-right: 62px;
+  `,
+  pointNumber: css`
+    font-family: "Pretendard";
+    font-size: 14px;
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 2.14;
+    letter-spacing: normal;
+    color: #000;
+    margin-right: 5px;
+  `,
+  pointIconContainer: css`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 14px;
+    height: 14px;
+  `,
+  graphContainer: css`
+    width: 100%;
+    height: 224px;
+    border-radius: 10px;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    margin-top: 31px;
+  `,
+  testGraphContainer: css`
+    width: 200px;
+    height: 100%;
+    border-radius: 5px;
+    border: solid 1px #e5e8f0;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    margin-right: 20px;
+  `,
+  testGraphHeader: css`
+    width: 100%;
+    height: 34px;
+    background-color: #e9f3ff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 15px;
+    padding-right: 15px;
+  `,
+  testGraphTitle: css`
+    font-family: "Pretendard";
+    font-size: 10px;
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.8;
+    letter-spacing: normal;
+    color: #000;
+  `,
+  monthContainer: css`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  `,
+  monthItem: css`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+  `,
+  monthColorFirst: css`
+    width: 5px;
+    height: 5px;
+    background-color: #319fff;
+    border-radius: 50%;
+  `,
+  monthColorSecond: css`
+    width: 5px;
+    height: 5px;
+    background-color: #ff6bc9;
+    border-radius: 50%;
+  `,
+  monthText: css`
+    font-family: "Pretendard";
+    font-size: 8px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 2.25;
+    letter-spacing: normal;
+    color: #000;
+  `,
+  areaLevelContainer: css`
+    width: 556px;
+    height: 100%;
+  `,
+  areaLevelHeader: css`
+    width: 100%;
+    height: 34px;
+    background-color: #e9f3ff;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    overflow: hidden;
+    display: flex;
+  `,
+  areaHeader: css`
+    width: 190px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  `,
+  levelHeader: css`
+    width: 366px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  `,
+  headerText: css`
+    font-family: "Pretendard";
+    font-size: 10px;
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 3;
+    letter-spacing: normal;
+    color: #000;
+  `,
+  areaLevelContent: css`
+    width: 100%;
+    height: 150px;
+    display: flex;
+  `,
+  areaContainer: css`
+    width: 50px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid #e5e8f0;
+  `,
+  areaAbilityContainer: css`
+    width: 100%;
+    height: 90px;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid #e5e8f0;
+  `,
+  areaSkillContainer: css`
+    width: 100%;
+    height: 60px;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid #e5e8f0;
+  `,
+  areaText: css`
+    font-family: "Pretendard";
+    font-size: 10px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 3;
+    letter-spacing: normal;
+    color: #000;
+  `,
+  areaSubContainer: css`
+    width: 100px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid #e5e8f0;
+  `,
+  areaSubItemContainer: css`
+    width: 100%;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid #e5e8f0;
+  `,
+  areaSubItemText: css`
+    font-family: "Pretendard";
+    font-size: 10px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 3;
+    letter-spacing: normal;
+    color: #000;
+  `,
+  areaScoreContainer: css`
+    width: 41px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid #e5e8f0;
+  `,
+  areaScoreItemContainer: css`
+    width: 100%;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid #e5e8f0;
+  `,
+  areaScoreItemText: css`
+    font-family: "Pretendard";
+    font-size: 10px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 3;
+    letter-spacing: normal;
+    color: #000;
+  `,
+  levelContainer: css`
+    width: 366px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  `,
+  levelItemContainer: css`
+    width: 100%;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid #e5e8f0;
+  `,
+  sliderContainer: css`
+    position: relative;
+    width: 356px;
+    height: 5px;
+    border-radius: 2.5px;
+    background-color: #f4f6fa;
+  `,
+  sliderTrack: css`
+    position: absolute;
+    width: 100%;
+    height: 5px;
+    border-radius: 2.5px;
+    background-image: linear-gradient(to left, #7ad6ff 2%, #08f);
+  `,
+  sliderThumb: css`
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 0;
+    right: 0;
+    width: 26px;
+    height: 16px;
+    border-radius: 8px;
+    border: solid 1px rgba(0, 0, 0, 0.1);
+    background-color: #73d1ff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  `,
+  sliderThumbNumber: css`
+    font-family: "Pretendard";
+    font-size: 8px;
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #fff;
+  `,
   contentContainer: css`
     width: 100%;
     padding: 20px;
