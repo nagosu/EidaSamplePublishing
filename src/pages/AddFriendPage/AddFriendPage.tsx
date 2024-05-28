@@ -57,8 +57,9 @@ const AddFriendPage = () => {
               <button
                 key={mode}
                 css={[
-                  styles.modeButton,
-                  activeMode === mode && styles.activeModeButton,
+                  mode === activeMode
+                    ? styles.activeModeButton
+                    : styles.modeButton,
                 ]}
                 onClick={() => setActiveMode(mode)}
               >
