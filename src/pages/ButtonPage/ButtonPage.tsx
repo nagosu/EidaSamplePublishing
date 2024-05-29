@@ -11,10 +11,10 @@ const ButtonPage = () => {
 
   return (
     <>
-      <div css={styles.historyButton}>
+      <button css={styles.historyButton}>
         <span css={styles.historyButtonText}>내 전적보기</span>
         <img css={styles.rightArrow} src={rightArrowIcon} alt='' />
-      </div>
+      </button>
       <div css={styles.modeButtonContainer}>
         {modes.map((mode) => (
           <button

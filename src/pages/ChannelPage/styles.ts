@@ -10,8 +10,8 @@ const styles = {
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: relative;
   `,
-
   title: css`
     font-family: "Pretendard";
     font-size: 20px;
@@ -22,7 +22,6 @@ const styles = {
     letter-spacing: normal;
     color: #000;
   `,
-
   searchContainer: css`
     width: 540px;
     height: 40px;
@@ -34,7 +33,6 @@ const styles = {
     align-items: center;
     justify-content: space-between;
   `,
-
   input: css`
     width: 480px;
     height: 24px;
@@ -63,13 +61,11 @@ const styles = {
       color: #000;
     }
   `,
-
   img: css`
     width: 24px;
     height: 24px;
     object-fit: contain;
   `,
-
   separator: css`
     width: 540px;
     height: 1px;
@@ -77,7 +73,6 @@ const styles = {
     border-radius: 0.5px;
     background-color: #e5e8f0;
   `,
-
   suggestText: css`
     margin-top: 29px;
     opacity: 0.5;
@@ -91,7 +86,6 @@ const styles = {
     text-align: center;
     color: #000;
   `,
-
   button: css`
     width: 260px;
     height: 46px;
@@ -99,7 +93,6 @@ const styles = {
     border-radius: 5px;
     background-color: #08f;
   `,
-
   buttonText: css`
     font-family: "Pretendard";
     font-size: 15px;
@@ -110,6 +103,11 @@ const styles = {
     letter-spacing: normal;
     text-align: center;
     color: #fff;
+  `,
+  nemo: css`
+    position: absolute;
+    right: 15px;
+    bottom: 15px;
   `,
 };
 

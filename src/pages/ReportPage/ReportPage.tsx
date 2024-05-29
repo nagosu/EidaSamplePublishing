@@ -92,13 +92,13 @@ const ReportPage = () => {
             <span css={styles.submitText}>2024.02.25 제출</span>
           </div>
           <div css={styles.buttonContainer}>
-            <div css={styles.editButton}>
+            <button css={styles.editButton}>
               {/* 연필 이미지 추가해야함 */}
               <span css={styles.editButtonText}>항목 수정</span>
-            </div>
-            <div css={styles.saveButton}>
+            </button>
+            <button css={styles.saveButton}>
               <span css={styles.saveButtonText}>PDF 저장</span>
-            </div>
+            </button>
           </div>
         </div>
       </div>
@@ -254,12 +254,12 @@ const ReportPage = () => {
           <div css={styles.chartContainer}>차트 들어가는 곳</div>
           <div css={styles.lastResultContainer}>
             <span css={styles.lastResultTitle}>이전 결과 비교</span>
-            <div css={styles.dropdownContainer}>
+            <button css={styles.dropdownContainer}>
               <span css={styles.dropdownText}>2월 테스트</span>
               <div css={styles.dropdownArrow}>
                 <img src={downArrow} alt='' />
               </div>
-            </div>
+            </button>
           </div>
         </div>
         <div css={styles.descriptionContainer}>

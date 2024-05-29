@@ -122,6 +122,7 @@ const styles = {
     align-items: center;
     justify-content: center;
     gap: 10px;
+    cursor: pointer;
   `,
   listAllText: css`
     font-family: "Pretendard";
@@ -145,6 +146,7 @@ const styles = {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    cursor: pointer;
   `,
   lectureThumbnailContainer: css`
     width: 100%;

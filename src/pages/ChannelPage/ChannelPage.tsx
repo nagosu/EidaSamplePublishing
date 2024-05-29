@@ -2,6 +2,7 @@
 
 import { styles } from "./styles";
 import searchIcon from "../../../public/assets/images/search.png";
+import nemoImage from "/assets/images/nemo.png";
 
 const ChannelPage = () => {
   return (
@@ -23,7 +24,7 @@ const ChannelPage = () => {
         <img src='' alt='' /> {/* 링크 이미지 추가 해야함 */}
         <span css={styles.buttonText}>채널 소개 링크 복사</span>
       </button>
-      {/* 니모 이미지 추가 해야함 */}
+      <img css={styles.nemo} src={nemoImage} alt='' />
     </div>
   );
 };

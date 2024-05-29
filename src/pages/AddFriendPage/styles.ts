@@ -10,7 +10,6 @@ const styles = {
     flex-direction: column;
     align-items: center;
   `,
-
   header: css`
     width: 100%;
     height: 50px;
@@ -20,8 +19,8 @@ const styles = {
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
   `,
-
   title: css`
     font-family: "Pretendard";
     font-size: 16px;
@@ -33,7 +32,16 @@ const styles = {
     text-align: left;
     color: #fff;
   `,
-
+  closeButton: css`
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    right: 15px;
+    top: 15px;
+  `,
   main: css`
     width: 100%;
     height: 464px;
@@ -43,7 +51,6 @@ const styles = {
     align-items: center;
     justify-content: center;
   `,
-
   mainContent: css`
     width: 600px;
     height: 414px;
@@ -51,7 +58,6 @@ const styles = {
     flex-direction: column;
     align-items: center;
   `,
-
   buttonContainer: css`
     width: 100%;
     height: 40px;
@@ -59,7 +65,6 @@ const styles = {
     align-items: center;
     justify-content: space-between;
   `,
-
   activeModeButton: css`
     width: 198px;
     height: 40px;
@@ -70,7 +75,6 @@ const styles = {
     align-items: center;
     justify-content: center;
   `,
-
   modeButton: css`
     width: 198px;
     height: 40px;
@@ -81,7 +85,6 @@ const styles = {
     align-items: center;
     justify-content: center;
   `,
-
   modeButtonText: css`
     font-family: "Pretendard";
     font-size: 13px;
@@ -93,7 +96,6 @@ const styles = {
     text-align: center;
     color: #fff;
   `,
-
   nicknameSearchContainer: css`
     width: 600px;
     height: 375px;
@@ -107,7 +109,6 @@ const styles = {
     flex-direction: column;
     align-items: center;
   `,
-
   searchContainer: css`
     width: 570px;
     height: 40px;
@@ -119,7 +120,6 @@ const styles = {
     justify-content: space-between;
     position: relative;
   `,
-
   searchInput: css`
     width: 500px;
     height: 24px;
@@ -147,13 +147,12 @@ const styles = {
       color: #000;
     }
   `,
-
   searchIcon: css`
     width: 24px;
     height: 24px;
     object-fit: contain;
+    cursor: pointer;
   `,
-
   searchResultContainer: css`
     width: 100%;
     height: 400px;
@@ -167,7 +166,6 @@ const styles = {
     left: 0;
     overflow-y: hidden;
   `,
-
   searchResultList: css`
     width: 100%;
     height: 390px;
@@ -192,7 +190,6 @@ const styles = {
       background: #a8b2cc;
     }
   `,
-
   searchResultItem: css`
     width: 100%;
     min-height: 40px;
@@ -202,8 +199,8 @@ const styles = {
     display: flex;
     align-items: center;
     justify-content: flex-start;
+    cursor: pointer;
   `,
-
   searchResultItemActive: css`
     width: 100%;
     min-height: 40px;
@@ -213,8 +210,8 @@ const styles = {
     display: flex;
     align-items: center;
     justify-content: flex-start;
+    cursor: pointer;
   `,
-
   searchProfileItem: css`
     width: auto;
     min-height: 24px;
@@ -222,7 +219,6 @@ const styles = {
     align-items: center;
     justify-content: flex-start;
   `,
-
   nicknameScroll: css`
     width: 570px;
     height: 315px;
@@ -248,7 +244,6 @@ const styles = {
       background: #a8b2cc;
     }
   `,
-
   profileItem: css`
     width: auto;
     min-height: 24px;
@@ -256,8 +251,8 @@ const styles = {
     align-items: center;
     justify-content: flex-start;
     margin-bottom: 10px;
+    cursor: pointer;
   `,
-
   profileImageWrapper: css`
     width: 24px;
     height: 24px;
@@ -267,14 +262,12 @@ const styles = {
     justify-content: center;
     position: relative;
   `,
-
   profileImage: css`
     width: 100%;
     height: 100%;
     border-radius: 50%;
     object-fit: contain;
   `,
-
   profileStatus: css`
     width: 8px;
     height: 8px;
@@ -285,7 +278,6 @@ const styles = {
     bottom: 0;
     right: 0;
   `,
-
   profileLevel: css`
     font-family: "Pretendard";
     font-size: 14px;
@@ -297,7 +289,6 @@ const styles = {
     color: #ecb24e;
     margin-right: 5px;
   `,
-
   highlighText: css`
     font-family: "Pretendard";
     font-size: 14px;
@@ -308,7 +299,6 @@ const styles = {
     letter-spacing: normal;
     color: #08f;
   `,
-
   profileNickName: css`
     font-family: "Pretendard";
     font-size: 14px;
@@ -319,7 +309,6 @@ const styles = {
     letter-spacing: normal;
     color: #000;
   `,
-
   footer: css`
     width: 100%;
     height: 86px;
@@ -332,7 +321,6 @@ const styles = {
     align-items: center;
     justify-content: space-between;
   `,
-
   selectedFriendContainer: css`
     width: 490px;
     height: 52px;
@@ -341,7 +329,6 @@ const styles = {
     align-items: flex-start;
     justify-content: space-between;
   `,
-
   selectedFriendTitle: css`
     opacity: 0.5;
     font-family: "Pretendard";
@@ -354,7 +341,6 @@ const styles = {
     text-align: left;
     color: #000;
   `,
-
   selectedFriendList: css`
     width: 480px;
     height: 30px;
@@ -362,28 +348,24 @@ const styles = {
     align-items: center;
     overflow: hidden;
   `,
-
   selectedFriendItem: css`
-    min-width: 134px;
+    width: auto;
     height: 30px;
     margin-right: 20px;
     display: inline-flex;
     align-items: center;
-    justify-content: space-between;
   `,
-
   selectedProfileContainer: css`
     display: flex;
     align-items: center;
+    margin-right: 5px;
   `,
-
   selectedProfileImage: css`
-    width: 30px;
+    min-width: 30px;
     height: 30px;
     margin-right: 10px;
     border-radius: 15px;
   `,
-
   selectedUserName: css`
     font-family: "Pretendard";
     font-size: 14px;
@@ -396,21 +378,18 @@ const styles = {
     white-space: nowrap;
     color: #000;
   `,
-
   cancelIcon: css`
-    width: 16px;
+    min-width: 16px;
     height: 16px;
     object-fit: contain;
     cursor: pointer;
   `,
-
   addButton: css`
     width: 106px;
     height: 46px;
     border-radius: 5px;
     background-color: #08f;
   `,
-
   addButtonText: css`
     font-family: "Pretendard";
     font-size: 15px;

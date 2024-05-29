@@ -1,10 +1,29 @@
 /** @jsxImportSource @emotion/react */
 
 import { styles } from "./styles";
-import sampleImage from "../../../public/assets/images/sampleImage.jpeg";
-import cancelIcon from "../../../public/assets/images/cancel.png";
-import searchIcon from "../../../public/assets/images/search.png";
+import sampleImage from "/assets/images/author_sample.png";
+import cancelIcon from "/assets/images/cancel.png";
+import searchIcon from "/assets/images/search.png";
+import closeButton from "/assets/images/close_white.svg";
 import { useEffect, useState } from "react";
+
+// 프로필 더미데이터
+const profiles = [
+  { level: "Lv.10", nickname: "파이썬마스터", image: sampleImage },
+  { level: "Lv.20", nickname: "코딩새싹", image: sampleImage },
+  { level: "Lv.15", nickname: "코딩꿈나무", image: sampleImage },
+  { level: "Lv.25", nickname: "김혜원", image: sampleImage },
+  { level: "Lv.18", nickname: "여은진이", image: sampleImage },
+  { level: "Lv.22", nickname: "오늘도힘차게", image: sampleImage },
+  { level: "Lv.17", nickname: "냐냐냥", image: sampleImage },
+  { level: "Lv.19", nickname: "귀여운게최고", image: sampleImage },
+  { level: "Lv.21", nickname: "꼬잉꼬잉", image: sampleImage },
+  { level: "Lv.23", nickname: "코딩왕", image: sampleImage },
+  { level: "Lv.21", nickname: "파이썬초보", image: sampleImage },
+  { level: "Lv.23", nickname: "코딩왕", image: sampleImage },
+  { level: "Lv.21", nickname: "리액트고수", image: sampleImage },
+  { level: "Lv.23", nickname: "코딩초보", image: sampleImage },
+];
 
 const AddFriendPage = () => {
   const [activeMode, setActiveMode] = useState<string>("친구");
@@ -13,24 +32,6 @@ const AddFriendPage = () => {
 
   // 선택된 버튼
   const modes = ["친구", "로비", "채널"];
-
-  // 프로필 더미데이터
-  const profiles = [
-    { level: "Lv.10", nickname: "파이썬마스터", image: sampleImage },
-    { level: "Lv.20", nickname: "코딩새싹", image: sampleImage },
-    { level: "Lv.15", nickname: "코딩꿈나무", image: sampleImage },
-    { level: "Lv.25", nickname: "김혜원", image: sampleImage },
-    { level: "Lv.18", nickname: "여은진이", image: sampleImage },
-    { level: "Lv.22", nickname: "오늘도힘차게", image: sampleImage },
-    { level: "Lv.17", nickname: "냐냐냥", image: sampleImage },
-    { level: "Lv.19", nickname: "귀여운게최고", image: sampleImage },
-    { level: "Lv.21", nickname: "꼬잉꼬잉", image: sampleImage },
-    { level: "Lv.23", nickname: "코딩왕", image: sampleImage },
-    { level: "Lv.21", nickname: "파이썬초보", image: sampleImage },
-    { level: "Lv.23", nickname: "코딩왕", image: sampleImage },
-    { level: "Lv.21", nickname: "리액트고수", image: sampleImage },
-    { level: "Lv.23", nickname: "코딩초보", image: sampleImage },
-  ];
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchData(e.target.value);
@@ -48,7 +49,9 @@ const AddFriendPage = () => {
     <div css={styles.container}>
       <div css={styles.header}>
         <span css={styles.title}>친구 추가</span>
-        {/* 닫기 이미지 추가 해야함 */}
+        <button css={styles.closeButton}>
+          <img src={closeButton} alt='' />
+        </button>
       </div>
       <div css={styles.main}>
         <div css={styles.mainContent}>

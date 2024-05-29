@@ -12,7 +12,6 @@ const styles = {
     justify-content: center;
     gap: 5px;
   `,
-
   historyButtonText: css`
     font-family: "Pretendard";
     font-size: 13px;
@@ -23,13 +22,11 @@ const styles = {
     letter-spacing: normal;
     color: #000;
   `,
-
   rightArrow: css`
     width: 12px;
     height: 12px;
     object-fit: contain;
   `,
-
   modeButtonContainer: css`
     width: 396px;
     height: 30px;
@@ -37,7 +34,6 @@ const styles = {
     border-radius: 5px;
     overflow: hidden;
   `,
-
   modeButtonActive: css`
     width: 198px;
     height: 30px;
@@ -46,7 +42,6 @@ const styles = {
     align-items: center;
     justify-content: center;
   `,
-
   modeButton: css`
     width: 198px;
     height: 30px;
@@ -55,7 +50,6 @@ const styles = {
     align-items: center;
     justify-content: center;
   `,
-
   modeButtonTextActive: css`
     font-family: "Pretendard";
     font-size: 13px;
@@ -66,7 +60,6 @@ const styles = {
     letter-spacing: normal;
     color: #fff;
   `,
-
   modeButtonText: css`
     opacity: 0.5;
     font-family: "Pretendard";
