@@ -5,6 +5,7 @@ import BannerPage from "./pages/BannerPage/BannerPage";
 import ChannelPage from "./pages/ChannelPage";
 import AddFriendPage from "./pages/AddFriendPage";
 import ButtonPage from "./pages/ButtonPage";
+import ReportPage from "./pages/ReportPage";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path='/channel' element={<ChannelPage />} />
         <Route path='/add' element={<AddFriendPage />} />
         <Route path='/button' element={<ButtonPage />} />
+        <Route path='/report' element={<ReportPage />} />
       </Routes>
     </Router>
   );

@@ -1,7 +1,6 @@
 /** @jsxImportSource @emotion/react */
 
 import { styles } from "./styles";
-import { css } from "@emotion/react";
 import searchIcon from "../../../public/assets/images/search.png";
 
 const ChannelPage = () => {
