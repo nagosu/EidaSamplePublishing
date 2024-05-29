@@ -6,6 +6,91 @@ const styles = {
     height: 150px;
     border-radius: 15px;
     background-image: linear-gradient(to left, #3a96ff 100%, #4db8ff 0%);
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 25px 30px;
+    position: relative;
+  `,
+  bannerContent: css`
+    width: auto;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+  `,
+  bannerTitleContainer: css`
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  `,
+  bannerTitle: css`
+    font-family: "Pretendard";
+    font-size: 25px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    letter-spacing: normal;
+    color: #fff;
+  `,
+  bannerSubTitle: css`
+    font-family: "Pretendard";
+    font-size: 18px;
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.22;
+    letter-spacing: normal;
+    color: #d9ff98;
+  `,
+  buttonContainer: css`
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  `,
+  enterButtonContainer: css`
+    width: 101px;
+    height: 30px;
+    border-radius: 15px;
+    background-color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 19px;
+  `,
+  buttonText: css`
+    font-family: "Pretendard";
+    font-size: 13px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.15;
+    letter-spacing: normal;
+    color: #fff;
+  `,
+  rightArrow: css`
+    width: 12px;
+    height: 12px;
+    object-fit: contain;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  `,
+  roomInfoButtonContainer: css`
+    width: 89px;
+    height: 30px;
+    border-radius: 15px;
+    border: solid 1px #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  `,
+  bannerImage: css`
+    position: absolute;
+    right: 0;
+    top: 0;
+    pointer-events: none;
   `,
   lectureContainer: css`
     width: 848px;
