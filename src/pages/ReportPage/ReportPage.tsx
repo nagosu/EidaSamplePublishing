@@ -69,6 +69,9 @@ const progressItems = [
   "샘플 1회차 7번 cospro3급",
 ];
 
+const abilityValues = [100, 80, 60];
+const skillValues = [40, 20];
+
 const ReportPage = () => {
   return (
     <div css={styles.reportContainer}>
@@ -187,15 +190,16 @@ const ReportPage = () => {
             </div>
           </div>
           <div css={styles.levelContainer}>
-            <div css={styles.areaLevelItem}>
-              <span css={styles.areaLevelText}>High</span>
-            </div>
-            <div css={styles.areaLevelItem}>
-              <span css={styles.areaLevelText}>Mid</span>
-            </div>
-            <div css={styles.areaLevelItem}>
-              <span css={styles.areaLevelText}>Mid</span>
-            </div>
+            {abilityValues.map((progress, index) => (
+              <div key={index} css={styles.levelItemContainer}>
+                <div css={styles.sliderContainer}>
+                  <div css={styles.sliderTrack(progress)}></div>
+                  <div css={styles.sliderThumb(progress)}>
+                    <span css={styles.sliderThumbNumber}>{progress}</span>
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
         <div css={styles.skillContainer}>
@@ -219,12 +223,16 @@ const ReportPage = () => {
             </div>
           </div>
           <div css={styles.levelContainer}>
-            <div css={styles.areaLevelItem}>
-              <span css={styles.areaLevelText}>High</span>
-            </div>
-            <div css={styles.areaLevelItem}>
-              <span css={styles.areaLevelText}>Mid</span>
-            </div>
+            {skillValues.map((progress, index) => (
+              <div key={index} css={styles.levelItemContainer}>
+                <div css={styles.sliderContainer}>
+                  <div css={styles.sliderTrack(progress)}></div>
+                  <div css={styles.sliderThumb(progress)}>
+                    <span css={styles.sliderThumbNumber}>{progress}</span>
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </div>

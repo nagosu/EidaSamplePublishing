@@ -432,6 +432,54 @@ const styles = {
     height: 80px;
     display: flex;
   `,
+  levelItemContainer: css`
+    width: 100%;
+    height: 40px;
+    padding-left: 5px;
+    padding-right: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid #e5e8f0;
+  `,
+  sliderContainer: css`
+    position: relative;
+    width: 100%;
+    height: 5px;
+    border-radius: 2.5px;
+    background-color: #f4f6fa;
+  `,
+  sliderTrack: (progress: number) => css`
+    position: absolute;
+    width: ${progress}%;
+    height: 5px;
+    border-radius: 2.5px;
+    background-image: linear-gradient(to left, #7ad6ff 2%, #08f);
+  `,
+  sliderThumb: (progress: number) => css`
+    position: absolute;
+    transform: translate(-100%, -50%);
+    top: 50%;
+    left: ${progress}%;
+    width: 26px;
+    height: 16px;
+    border-radius: 8px;
+    border: solid 1px rgba(0, 0, 0, 0.1);
+    background-color: #73d1ff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  `,
+  sliderThumbNumber: css`
+    font-family: "Pretendard";
+    font-size: 8px;
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #fff;
+  `,
   graphContainer: css`
     width: 100%;
     height: 464px;
