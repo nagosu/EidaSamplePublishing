@@ -1,12 +1,61 @@
 /** @jsxImportSource @emotion/react */
 
 import { styles } from "./styles";
+import rightArrowCircle from "/assets/images/right_arrow_circle.png";
+import thumbnailSample from "/assets/images/thumbnail_sample.jpg";
+import filledStarIcon from "/assets/images/star_yellow.svg";
+import emptyStarIcon from "/assets/images/star.svg";
+import authorSample from "/assets/images/author_sample.png";
 
 const BannerPage = () => {
+  const fillStars = Array(4).fill(filledStarIcon);
+  const emptyStars = Array(1).fill(emptyStarIcon);
+
   return (
     <>
-      <div></div>
-      <div></div>
+      <div css={styles.bannerContainer}></div>
+      <div css={styles.lectureContainer}>
+        <div css={styles.lectureHeader}>
+          <span css={styles.lectureTitle}>인기 강의</span>
+          <div css={styles.listAllContainer}>
+            <span css={styles.listAllText}>전체보기</span>
+            <img src={rightArrowCircle} alt='' />
+          </div>
+        </div>
+        <div css={styles.letcureListContainer}>
+          {[1, 2, 3, 4].map((item) => (
+            <div css={styles.lectureItem}>
+              <div css={styles.lectureThumbnailContainer}>
+                <img src={thumbnailSample} alt='' />
+              </div>
+              <div css={styles.lectureItemTitle}>
+                챗GPT 사용법 (chatGPT 가입 방법, 프롬프트 작성 팁, API활용사례)
+              </div>
+              <div css={styles.rateContainer}>
+                <div css={styles.starContainer}>
+                  {fillStars.map((star, index) => (
+                    <div css={styles.starItem} key={`fill-${index}`}>
+                      <img src={star} alt='Filled Star' />
+                    </div>
+                  ))}
+                  {emptyStars.map((star, index) => (
+                    <div css={styles.starItem} key={`empty-${index}`}>
+                      <img src={star} alt='Empty Star' />
+                    </div>
+                  ))}
+                </div>
+                <span css={styles.rateText}>(45)</span>
+              </div>
+              <div css={styles.authorContainer}>
+                <div css={styles.authorImageContainer}>
+                  <img src={authorSample} alt='' />
+                </div>
+                <span css={styles.authorName}>코드모스</span>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
     </>
   );
 };
