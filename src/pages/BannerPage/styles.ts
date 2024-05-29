@@ -97,6 +97,7 @@ const styles = {
     height: auto;
     display: flex;
     flex-direction: column;
+    margin-top: 50px;
   `,
   lectureHeader: css`
     width: 100%;

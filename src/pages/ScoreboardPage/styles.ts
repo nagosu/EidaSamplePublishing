@@ -570,6 +570,13 @@ const styles = {
     letter-spacing: normal;
     color: #000;
   `,
+  testGraphContent: css`
+    width: 100%;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  `,
   areaLevelContainer: css`
     width: 556px;
     height: 100%;
@@ -706,6 +713,8 @@ const styles = {
   levelItemContainer: css`
     width: 100%;
     height: 30px;
+    padding-left: 5px;
+    padding-right: 5px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -713,23 +722,23 @@ const styles = {
   `,
   sliderContainer: css`
     position: relative;
-    width: 356px;
+    width: 100%;
     height: 5px;
     border-radius: 2.5px;
     background-color: #f4f6fa;
   `,
-  sliderTrack: css`
+  sliderTrack: (progress: number) => css`
     position: absolute;
-    width: 100%;
+    width: ${progress}%;
     height: 5px;
     border-radius: 2.5px;
     background-image: linear-gradient(to left, #7ad6ff 2%, #08f);
   `,
-  sliderThumb: css`
+  sliderThumb: (progress: number) => css`
     position: absolute;
-    transform: translate(-50%, -50%);
-    top: 0;
-    right: 0;
+    transform: translate(-100%, -50%);
+    top: 50%;
+    left: ${progress}%;
     width: 26px;
     height: 16px;
     border-radius: 8px;

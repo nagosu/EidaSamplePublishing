@@ -369,6 +369,8 @@ const recommendedItems = [
   },
 ];
 
+const progressValues = [100, 80, 60, 40, 20];
+
 const BattlePage = () => {
   const [isCheck, setIsCheck] = useState(false);
 
@@ -522,6 +524,7 @@ const BattlePage = () => {
                   </div>
                 </div>
               </div>
+              <div css={styles.testGraphContent}>차트 들어가는 곳</div>
             </div>
             <div css={styles.areaLevelContainer}>
               <div css={styles.areaLevelHeader}>
@@ -576,18 +579,16 @@ const BattlePage = () => {
                   </div>
                 </div>
                 <div css={styles.levelContainer}>
-                  <div css={styles.levelItemContainer}>
-                    <div css={styles.sliderContainer}>
-                      <div css={styles.sliderTrack}></div>
-                      <div css={styles.sliderThumb}>
-                        <span css={styles.sliderThumbNumber}>100</span>
+                  {progressValues.map((progress, index) => (
+                    <div key={index} css={styles.levelItemContainer}>
+                      <div css={styles.sliderContainer}>
+                        <div css={styles.sliderTrack(progress)}></div>
+                        <div css={styles.sliderThumb(progress)}>
+                          <span css={styles.sliderThumbNumber}>{progress}</span>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                  <div css={styles.levelItemContainer}></div>
-                  <div css={styles.levelItemContainer}></div>
-                  <div css={styles.levelItemContainer}></div>
-                  <div css={styles.levelItemContainer}></div>
+                  ))}
                 </div>
               </div>
             </div>
