@@ -273,6 +273,7 @@ const styles = {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    overflow: hidden;
   `,
   scoreList: css`
     width: 100%;
@@ -501,9 +502,10 @@ const styles = {
     background-color: #fff;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     padding: 20px;
     margin-top: 31px;
+    overflow: hidden;
   `,
   testGraphContainer: css`
     width: 200px;
@@ -513,7 +515,6 @@ const styles = {
     display: flex;
     flex-direction: column;
     overflow: hidden;
-    margin-right: 20px;
   `,
   testGraphHeader: css`
     width: 100%;
@@ -747,6 +748,177 @@ const styles = {
     line-height: normal;
     letter-spacing: normal;
     color: #fff;
+  `,
+  problemTypeContainer: css`
+    width: 224px;
+    height: 100%;
+    border-radius: 5px;
+    border: solid 1px #e5e8f0;
+    display: flex;
+    flex-direction: column;
+  `,
+  problemTypeHeader: css`
+    width: 100%;
+    height: 34px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    background-color: #e9f3ff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  `,
+  problemTypeTitle: css`
+    font-family: "Pretendard";
+    font-size: 10px;
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.8;
+    letter-spacing: normal;
+    color: #000;
+  `,
+  problemTypeContent: css`
+    width: 100%;
+    height: 150px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 10px;
+  `,
+  typeWrapper: css`
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 10px;
+    column-gap: 5px;
+  `,
+  typeContainer: css`
+    width: auto;
+    height: 19px;
+    padding-left: 6px;
+    padding-right: 6px;
+    border-radius: 2px;
+    background-color: #9980fa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  `,
+  typeText: css`
+    font-family: "Pretendard";
+    font-size: 10px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #fff;
+  `,
+  recommendContainer: css`
+    width: 224px;
+    height: 100%;
+    border-radius: 5px;
+    border: solid 1px #e5e8f0;
+    display: flex;
+    flex-direction: column;
+  `,
+  recommendHeader: css`
+    width: 100%;
+    height: 34px;
+    border-radius: 5px;
+    background-color: #e9f3ff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  `,
+  recommendTitle: css`
+    font-family: "Pretendard";
+    font-size: 10px;
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.8;
+    letter-spacing: normal;
+    color: #000;
+  `,
+  recommendContent: css`
+    width: 100%;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+  `,
+  recommendScroll: css`
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+
+    &::-webkit-scrollbar {
+      width: 3px;
+      right: 10px;
+    }
+
+    &::-webkit-scrollbar-track {
+      border-radius: 2px;
+      right: 10px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      width: 3px;
+      height: 27px;
+      border-radius: 2px;
+      background: #a8b2cc;
+    }
+  `,
+  recommendItem: css`
+    width: calc(100% - 10px);
+    min-height: 44px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: 5px;
+    border-radius: 10px;
+    background-color: #eef1f8;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+  `,
+  itemImage: css`
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    object-fit: cover;
+  `,
+  itemTitleContainer: css`
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 1px;
+  `,
+  itemTitle: css`
+    font-family: "Pretendard";
+    font-size: 13px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.38;
+    letter-spacing: normal;
+    color: #000;
+  `,
+  itemSubTitle: css`
+    opacity: 0.5;
+    font-family: "Pretendard";
+    font-size: 10px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #000;
   `,
   contentContainer: css`
     width: 100%;

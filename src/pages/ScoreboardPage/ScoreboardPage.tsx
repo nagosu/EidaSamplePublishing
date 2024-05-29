@@ -12,6 +12,9 @@ import starIcon from "/assets/images/star_yellow.svg";
 import searchIcon from "/assets/images/search.png";
 import timeIcon from "/assets/images/time.svg";
 import pointIcon from "/assets/images/point.svg";
+import profileSample1 from "/assets/images/profile_sample1.png";
+import profileSample2 from "/assets/images/profile_sample2.png";
+import profileSample3 from "/assets/images/profile_sample3.png";
 
 const graphScore1 = [[0.8, 0.6, 0.7, 0.5, 0.9]];
 const graphScore2 = [[0.5, 0.7, 0.6, 0.4, 0.8]];
@@ -348,6 +351,24 @@ const USERS = [
   },
 ];
 
+const recommendedItems = [
+  {
+    image: profileSample1,
+    title: "서블릿",
+    subTitle: "텍스트코딩",
+  },
+  {
+    image: profileSample2,
+    title: "성적 평균 구하기",
+    subTitle: "블록코딩",
+  },
+  {
+    image: profileSample3,
+    title: "서블릿",
+    subTitle: "4지선다",
+  },
+];
+
 const BattlePage = () => {
   const [isCheck, setIsCheck] = useState(false);
 
@@ -567,6 +588,52 @@ const BattlePage = () => {
                   <div css={styles.levelItemContainer}></div>
                   <div css={styles.levelItemContainer}></div>
                   <div css={styles.levelItemContainer}></div>
+                </div>
+              </div>
+            </div>
+            <div css={styles.problemTypeContainer}>
+              <div css={styles.problemTypeHeader}>
+                <span css={styles.problemTypeTitle}>부족한 문제유형</span>
+              </div>
+              <div css={styles.problemTypeContent}>
+                <div css={styles.typeWrapper}>
+                  <div css={styles.typeContainer}>
+                    <span css={styles.typeText}>스택</span>
+                  </div>
+                  <div css={styles.typeContainer}>
+                    <span css={styles.typeText}>그래프</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div css={styles.recommendContainer}>
+              <div css={styles.recommendHeader}>
+                <span css={styles.recommendTitle}>추천문제</span>
+              </div>
+              <div css={styles.recommendContent}>
+                <div css={styles.recommendScroll}>
+                  {recommendedItems.map((item, index) => (
+                    <div css={styles.recommendItem} key={index}>
+                      <div css={styles.itemImage}>
+                        <img src={item.image} alt={item.title} />
+                      </div>
+                      <div css={styles.itemTitleContainer}>
+                        <span css={styles.itemTitle}>{item.title}</span>
+                        <span css={styles.itemSubTitle}>{item.subTitle}</span>
+                      </div>
+                    </div>
+                  ))}
+                  {recommendedItems.map((item, index) => (
+                    <div css={styles.recommendItem} key={index}>
+                      <div css={styles.itemImage}>
+                        <img src={item.image} alt={item.title} />
+                      </div>
+                      <div css={styles.itemTitleContainer}>
+                        <span css={styles.itemTitle}>{item.title}</span>
+                        <span css={styles.itemSubTitle}>{item.subTitle}</span>
+                      </div>
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>
