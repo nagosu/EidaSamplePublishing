@@ -351,6 +351,7 @@ const USERS = [
   },
 ];
 
+// 추천문제
 const recommendedItems = [
   {
     image: profileSample1,
@@ -369,6 +370,7 @@ const recommendedItems = [
   },
 ];
 
+// 레벨별 슬라이더
 const progressValues = [100, 80, 60, 40, 20];
 
 const BattlePage = () => {

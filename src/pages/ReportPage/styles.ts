@@ -102,6 +102,14 @@ const styles = {
     align-items: center;
     gap: 5px;
   `,
+  pencilIconContainer: css`
+    width: 14px;
+    height: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    object-fit: contain;
+  `,
   editButtonText: css`
     font-family: "Pretendard";
     font-size: 13px;

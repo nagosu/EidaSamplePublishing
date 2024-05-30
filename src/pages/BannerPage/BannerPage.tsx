@@ -10,8 +10,8 @@ import rightArrowIcon from "/assets/images/right_arrow_white.png";
 import bannerImage from "/assets/images/banner_image.png";
 
 const BannerPage = () => {
-  const fillStars = Array(4).fill(filledStarIcon);
-  const emptyStars = Array(1).fill(emptyStarIcon);
+  const fillStars = Array(4).fill(filledStarIcon); // 채워진 별 아이콘
+  const emptyStars = Array(1).fill(emptyStarIcon); // 빈 별 아이콘
 
   return (
     <>

@@ -2,7 +2,8 @@
 
 import { styles } from "./styles";
 import searchIcon from "../../../public/assets/images/search.png";
-import nemoImage from "/assets/images/nemo.png";
+import nemo from "/assets/images/nemo.png";
+import linkIcon from "/assets/images/link.png";
 
 const ChannelPage = () => {
   return (
@@ -21,10 +22,12 @@ const ChannelPage = () => {
         채널이 없으신가요? 회사/학교 담당자에게 도입을 요청해보세요!
       </span>
       <button css={styles.button}>
-        <img src='' alt='' /> {/* 링크 이미지 추가 해야함 */}
+        <div css={styles.linkIconContainer}>
+          <img src={linkIcon} alt='' />
+        </div>
         <span css={styles.buttonText}>채널 소개 링크 복사</span>
       </button>
-      <img css={styles.nemo} src={nemoImage} alt='' />
+      <img css={styles.nemo} src={nemo} alt='' />
     </div>
   );
 };

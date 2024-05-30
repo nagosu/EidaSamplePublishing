@@ -26,17 +26,19 @@ const profiles = [
 ];
 
 const AddFriendPage = () => {
-  const [activeMode, setActiveMode] = useState<string>("친구");
-  const [isSearching, setIsSearching] = useState<boolean>(false);
-  const [searchData, setSearchData] = useState<string>("");
+  const [activeMode, setActiveMode] = useState<string>("친구"); // 선택된 버튼(친구, 로비, 채널)
+  const [isSearching, setIsSearching] = useState<boolean>(false); // 검색중인지 여부
+  const [searchData, setSearchData] = useState<string>(""); // 검색어
 
   // 선택된 버튼
   const modes = ["친구", "로비", "채널"];
 
+  // 검색어 입력 시
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchData(e.target.value);
   };
 
+  // 검색어 입력 시 검색중인지 여부
   useEffect(() => {
     if (searchData) {
       setIsSearching(true);

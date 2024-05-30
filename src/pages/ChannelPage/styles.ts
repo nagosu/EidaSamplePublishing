@@ -3,7 +3,7 @@ import { css } from "@emotion/react";
 const styles = {
   container: css`
     width: 620px;
-    height: 287px;
+    height: fit-content;
     padding: 30px 40px;
     border-radius: 10px;
     border: solid 1px #e5e8f0;
@@ -87,11 +87,23 @@ const styles = {
     color: #000;
   `,
   button: css`
+    position: relative;
     width: 260px;
     height: 46px;
     margin-top: 20px;
     border-radius: 5px;
     background-color: #08f;
+  `,
+  linkIconContainer: css`
+    width: 16px;
+    height: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    object-fit: contain;
+    position: absolute;
+    top: 15px;
+    left: 15px;
   `,
   buttonText: css`
     font-family: "Pretendard";

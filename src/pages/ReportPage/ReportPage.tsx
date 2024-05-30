@@ -5,7 +5,9 @@ import userSample from "/assets/images/user_sample.png";
 import infoImage from "/assets/images/profile_img.svg";
 import downArrow from "/assets/images/down_arrow.png";
 import levelImage from "/assets/images/profile_sample2.png";
+import editPencil from "/assets/images/edit_pencil.png";
 
+// 평가항목 설명
 const evaluationItems = [
   {
     title: "타자연습",
@@ -30,6 +32,7 @@ const evaluationItems = [
   },
 ];
 
+// 평가점수 설명
 const evaluationScores = [
   {
     scoreRange: "90 ~ 100",
@@ -53,12 +56,14 @@ const evaluationScores = [
   },
 ];
 
+// 진단평가 설명
 const descriptionItems = [
   "코드를 잘 이해하여 응용하는 상현이는 프로젝트 수업 시 꼭 사용해야 할 코드를 잘 파악하여 조직을 작성하기에 프로그램의 완성도가 높습니다.",
   "사고력이거나 개념정리도 잘 되어 이번 레벨테스트에서 높은 점수를 받았습니다.",
   "같은반 아이들과도 상호작용이 좋아 학습 시너지도 높습니다. 열심히 하는 상현이에게 많은 응원 부탁드립니다.",
 ];
 
+// 진행률 항목
 const progressItems = [
   "샘플 1회차 1번 cospro3급",
   "샘플 1회차 2번 cospro3급",
@@ -69,8 +74,8 @@ const progressItems = [
   "샘플 1회차 7번 cospro3급",
 ];
 
-const abilityValues = [100, 80, 60];
-const skillValues = [40, 20];
+const abilityValues = [100, 80, 60]; // Ability 슬라이더 value
+const skillValues = [40, 20]; // Skill 슬라이더 value
 
 const ReportPage = () => {
   return (
@@ -93,7 +98,9 @@ const ReportPage = () => {
           </div>
           <div css={styles.buttonContainer}>
             <button css={styles.editButton}>
-              {/* 연필 이미지 추가해야함 */}
+              <div css={styles.pencilIconContainer}>
+                <img src={editPencil} alt='' />
+              </div>
               <span css={styles.editButtonText}>항목 수정</span>
             </button>
             <button css={styles.saveButton}>
