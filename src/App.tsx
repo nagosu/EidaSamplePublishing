@@ -7,6 +7,7 @@ import AddFriendPage from "./pages/AddFriendPage";
 import ButtonPage from "./pages/ButtonPage";
 import ReportPage from "./pages/ReportPage";
 import ModePage from "./pages/ModePage";
+import HistoryPage from "./pages/HistoryPage";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route path='/button' element={<ButtonPage />} />
         <Route path='/report' element={<ReportPage />} />
         <Route path='/mode' element={<ModePage />} />
+        <Route path='/history' element={<HistoryPage />} />
       </Routes>
     </Router>
   );
