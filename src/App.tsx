@@ -6,6 +6,7 @@ import ChannelPage from "./pages/ChannelPage";
 import AddFriendPage from "./pages/AddFriendPage";
 import ButtonPage from "./pages/ButtonPage";
 import ReportPage from "./pages/ReportPage";
+import ModePage from "./pages/ModePage";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path='/add' element={<AddFriendPage />} />
         <Route path='/button' element={<ButtonPage />} />
         <Route path='/report' element={<ReportPage />} />
+        <Route path='/mode' element={<ModePage />} />
       </Routes>
     </Router>
   );

@@ -99,6 +99,39 @@ const styles = {
         }
       }
     }
+
+    .profile_bottom.watching {
+      background-image: radial-gradient(
+        circle at 50% 50%,
+        #fcf9ff,
+        #e3beff 119%
+      );
+      position: relative;
+    }
+
+    .profile_bottom.solving {
+      background-image: radial-gradient(
+        circle at 50% 50%,
+        #fcf9ff,
+        #aedcff 119%
+      );
+      position: relative;
+    }
+  `,
+  headerWatching: css`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 34px;
+    background-image: linear-gradient(
+      271deg,
+      #6b04bb 100%,
+      rgba(107, 4, 187, 0) 0%
+    );
+    opacity: 0.5;
+    position: absolute;
+    top: 0;
   `,
 };
 
