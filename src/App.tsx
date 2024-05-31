@@ -8,6 +8,7 @@ import ButtonPage from "./pages/ButtonPage";
 import ReportPage from "./pages/ReportPage";
 import ModePage from "./pages/ModePage";
 import HistoryPage from "./pages/HistoryPage";
+import CountPage from "./pages/CountPage";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <Route path='/report' element={<ReportPage />} />
         <Route path='/mode' element={<ModePage />} />
         <Route path='/history' element={<HistoryPage />} />
+        <Route path='/count' element={<CountPage />} />
       </Routes>
     </Router>
   );

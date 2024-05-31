@@ -1,0 +1,40 @@
+/** @jsxImportSource @emotion/react */
+
+import { styles } from "./styles";
+import backgroundSample from "/assets/images/background.png";
+import count3 from "/assets/images/count_3.png";
+import count2 from "/assets/images/count_2.png";
+import count1 from "/assets/images/count_1.png";
+import start from "/assets/images/count_start.png";
+import { useEffect, useState } from "react";
+
+const CountPage = () => {
+  const [countIndex, setCountIndex] = useState(0);
+  const images = [count3, count2, count1, start];
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCountIndex((prevIndex) => {
+        if (prevIndex < images.length - 1) {
+          return prevIndex + 1;
+        } else {
+          clearInterval(timer);
+          return prevIndex;
+        }
+      });
+    }, 1000);
+
+    return () => clearInterval(timer);
+  }, []);
+
+  return (
+    <>
+      <img src={backgroundSample} alt='' />
+      <div css={styles.container}>
+        <img src={images[countIndex]} alt='' />
+      </div>
+    </>
+  );
+};
+
+export default CountPage;
