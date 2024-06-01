@@ -35,6 +35,7 @@ const ModePage = () => {
           </div>
         </div>
         <div className='profile_bottom watching'>
+          <div css={styles.headerWatching}></div>
           <div className='profile_char'>
             <img src={`/assets/images/${USER.user.charImg}`} alt='' />
           </div>
@@ -43,7 +44,6 @@ const ModePage = () => {
             <p className='name'>{USER.user.name}</p>
             <p className='level'>Lv.{USER.user.level}</p>
           </div>
-          <div css={styles.headerWatching}></div>
         </div>
       </div>
 
@@ -62,6 +62,7 @@ const ModePage = () => {
           </div>
         </div>
         <div className='profile_bottom solving'>
+          <div css={styles.headerSolving}></div>
           <div className='profile_char'>
             <img src={`/assets/images/${USER.user.charImg}`} alt='' />
           </div>
