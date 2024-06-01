@@ -6,6 +6,7 @@ import count3 from "/assets/images/count_3.png";
 import count2 from "/assets/images/count_2.png";
 import count1 from "/assets/images/count_1.png";
 import start from "/assets/images/count_start.png";
+import dolphin from "/assets/images/dolphin200.png";
 import { useEffect, useState } from "react";
 
 const CountPage = () => {
@@ -32,6 +33,9 @@ const CountPage = () => {
       <img src={backgroundSample} alt='' />
       <div css={styles.container}>
         <img src={images[countIndex]} alt='' />
+        <div css={styles.dolphinContainer}>
+          <img css={styles.dolphin} src={dolphin} alt='' />
+        </div>
       </div>
     </>
   );

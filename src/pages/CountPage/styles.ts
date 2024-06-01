@@ -13,6 +13,16 @@ const styles = {
     background-color: rgba(0, 0, 0, 0.8);
     z-index: 1000;
   `,
+  dolphinContainer: css`
+    width: 200px;
+    height: 234px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+    right: 50px;
+  `,
 };
 
 export { styles };
