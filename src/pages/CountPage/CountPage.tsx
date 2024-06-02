@@ -10,9 +10,10 @@ import dolphin from "/assets/images/dolphin200.png";
 import { useEffect, useState } from "react";
 
 const CountPage = () => {
-  const [countIndex, setCountIndex] = useState(0);
-  const images = [count3, count2, count1, start];
+  const [countIndex, setCountIndex] = useState(0); // 카운트 이미지 인덱스
+  const images = [count3, count2, count1, start]; // 카운트 이미지
 
+  // 카운트 이미지 변경
   useEffect(() => {
     const timer = setInterval(() => {
       setCountIndex((prevIndex) => {
@@ -34,7 +35,7 @@ const CountPage = () => {
       <div css={styles.container}>
         <img src={images[countIndex]} alt='' />
         <div css={styles.dolphinContainer}>
-          <img css={styles.dolphin} src={dolphin} alt='' />
+          <img src={dolphin} alt='' />
         </div>
       </div>
     </>

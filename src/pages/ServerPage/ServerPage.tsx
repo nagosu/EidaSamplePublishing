@@ -10,10 +10,13 @@ import dolphin from "/assets/images/dolphin90.png";
 import shark from "/assets/images/shark90.png";
 import seahorse from "/assets/images/seahorse90.png";
 
+// 서버명
 const servers = ["크랩", "니모", "터틀", "크랩", "니모", "해마"];
 
+// 동물 이미지
 const animalImages = [crab, nemo, turtle, dolphin, shark, seahorse];
 
+// 콘텐츠 색상
 const contentColor = [
   "ffddce",
   "ffe5d4",
@@ -23,6 +26,7 @@ const contentColor = [
   "ffd5d5",
 ];
 
+// 그림자 색상
 const shadowColor = [
   "efc5b2",
   "ffd7bb",

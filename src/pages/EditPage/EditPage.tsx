@@ -8,6 +8,7 @@ import deleteIcon from "/assets/images/closeBtn.svg";
 import checkWhite from "/assets/images/check_white.svg";
 import { useState } from "react";
 
+// 평가 항목
 const evaluations = [
   "타자연습",
   "컴퓨팅 사고력",
@@ -16,6 +17,7 @@ const evaluations = [
   "수업 태도",
 ];
 
+// LEVEL(수준)
 const levels = [
   "참여횟수 / 정확도 / 시간 / 스스로 세웠던 목표 달성횟수",
   "정해진 시간안에 주어진 문제 안에서 블록응용 / 로직(한문제당 1점)",
@@ -24,10 +26,13 @@ const levels = [
   "지각 및 출석 / 수업참여도(미션수행, 발표) / 집중도",
 ];
 
+// 잘하고 있을 때
 const GOOD = ["잘하고 있을 때", "", "", "", ""];
 
+// 부족한 경우
 const BAD = ["", "", "타자를 못 칩니다", "", ""];
 
+// 문제 유형
 const OPTIONS = [
   "String (문자열)",
   "Array (배열)",
@@ -37,30 +42,33 @@ const OPTIONS = [
   "Tree (트리)",
 ];
 
+// 선택한 문제 유형
 const dropdownSelect = ["그래프", "최단 경로", "동적프로그래밍"];
 
 const EditPage = () => {
   const [dropdownVisible, setDropdownVisible] = useState(
     Array(evaluations.length).fill(false)
-  );
+  ); // 평가 항목별로 dropdown이 열려있는지 여부
   const [selectedOptions, setSelectedOptions] = useState(
     Array(evaluations.length).fill({})
-  );
+  ); // 평가 항목별로 선택한 문제 유형
   const [inputFocusGood, setInputFocusGood] = useState(
     Array(evaluations.length).fill(false)
-  );
+  ); // 잘하고 있을 때 input focus 여부
   const [inputFocusBad, setInputFocusBad] = useState(
     Array(evaluations.length).fill(false)
-  );
-  const [goodInputs, setGoodInputs] = useState(GOOD);
-  const [badInputs, setBadInputs] = useState(BAD);
+  ); // 부족한 경우 input focus 여부
+  const [goodInputs, setGoodInputs] = useState(GOOD); // 잘하고 있을 때 input value
+  const [badInputs, setBadInputs] = useState(BAD); // 부족한 경우 input value
 
+  // dropdown 클릭 시 dropdown이 열리거나 닫힘
   const handleDropdownClick = (index: number) => {
     const newDropdownVisible = [...dropdownVisible];
     newDropdownVisible[index] = !newDropdownVisible[index];
     setDropdownVisible(newDropdownVisible);
   };
 
+  // 문제 유형 선택 시 선택한 문제 유형에 추가
   const handleOptionSelect = (evalIndex: number, option: number) => {
     const newSelectedOptions = [...selectedOptions];
     newSelectedOptions[evalIndex] = {
@@ -70,6 +78,7 @@ const EditPage = () => {
     setSelectedOptions(newSelectedOptions);
   };
 
+  // 선택한 문제 유형 삭제
   const handleInputFocus = (index: number, focused: boolean, type: string) => {
     if (type === "good") {
       const newInputFocusGood = [...inputFocusGood];
@@ -82,6 +91,7 @@ const EditPage = () => {
     }
   };
 
+  // input value 변경
   const handleInputChange = (
     index: number,
     event: React.ChangeEvent<HTMLInputElement>,

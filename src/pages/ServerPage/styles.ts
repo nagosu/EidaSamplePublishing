@@ -139,6 +139,7 @@ const styles = {
     display: flex;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
   `,
   rightArrow: css`
     width: 13px;

@@ -69,6 +69,7 @@ const styles = {
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
   `,
   buttonContainer: css`
     display: flex;
