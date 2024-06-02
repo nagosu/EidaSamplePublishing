@@ -5,6 +5,8 @@ import closeIcon from "/assets/images/close_white.svg";
 import reportDelete from "/assets/images/report_delete.png";
 import downArrowIcon from "/assets/images/down_arrow.png";
 import deleteIcon from "/assets/images/closeBtn.svg";
+import checkWhite from "/assets/images/check_white.svg";
+import { useState } from "react";
 
 const evaluations = [
   "타자연습",
@@ -26,7 +28,40 @@ const GOOD = ["잘하고 있을 때", "", "", "", ""];
 
 const BAD = ["", "", "타자를 못 칩니다", "", ""];
 
+const OPTIONS = [
+  "String (문자열)",
+  "Array (배열)",
+  "Queue (큐)",
+  "Stack (스택)",
+  "Hash (해쉬)",
+  "Tree (트리)",
+];
+
+const dropdownSelect = ["그래프", "최단 경로", "동적프로그래밍"];
+
 const EditPage = () => {
+  const [dropdownVisible, setDropdownVisible] = useState(
+    Array(evaluations.length).fill(false)
+  );
+  const [selectedOptions, setSelectedOptions] = useState(
+    Array(evaluations.length).fill({})
+  );
+
+  const handleDropdownClick = (index) => {
+    const newDropdownVisible = [...dropdownVisible];
+    newDropdownVisible[index] = !newDropdownVisible[index];
+    setDropdownVisible(newDropdownVisible);
+  };
+
+  const handleOptionSelect = (evalIndex, option) => {
+    const newSelectedOptions = [...selectedOptions];
+    newSelectedOptions[evalIndex] = {
+      ...newSelectedOptions[evalIndex],
+      [option]: !newSelectedOptions[evalIndex][option],
+    };
+    setSelectedOptions(newSelectedOptions);
+  };
+
   return (
     <div css={styles.container}>
       <div css={styles.header}>
@@ -55,30 +90,6 @@ const EditPage = () => {
           <div css={styles.headerBlank}></div>
         </div>
         <div css={styles.tableBodyContainer}>
-          {/* <div css={styles.tableBodyRow}>
-            <div css={styles.bodyEvaluation}>
-              <span css={styles.tableText}>타자연습</span>
-            </div>
-            <div css={styles.bodyLevel}>
-              <span css={styles.tableText}>
-                참여횟수 / 정확도 / 시간 / 스스로 세웠던 목표 달성횟수
-              </span>
-            </div>
-            <div css={styles.bodyGood}>
-              <span css={styles.tableText}>잘하고 있을 때</span>
-            </div>
-            <div css={styles.bodyBad}>
-              <span css={styles.tableText}>부족한 경우</span>
-            </div>
-            <div css={styles.bodyType}>
-              <span css={styles.tableText}>문제 유형</span>
-            </div>
-            <div css={styles.bodyDelete}>
-              <div css={styles.deleteContainer}>
-                <img src={reportDelete} alt='' />
-              </div>
-            </div>
-          </div> */}
           {evaluations.map((evaluation, index) => (
             <div css={styles.tableBodyRow} key={index}>
               <div css={styles.bodyEvaluation}>
@@ -94,27 +105,46 @@ const EditPage = () => {
                 <span css={styles.tableText}>{BAD[index]}</span>
               </div>
               <div css={styles.bodyType}>
-                <div css={styles.dropdownContainer}>
+                <div
+                  css={styles.dropdownContainer}
+                  onClick={() => handleDropdownClick(index)}
+                >
                   <span css={styles.dropdownTitle}>
                     문제 유형을 선택해주세요.
                   </span>
                   <div css={styles.dropdownIconContainer}>
                     <img src={downArrowIcon} alt='' />
                   </div>
+                  {dropdownVisible[index] && (
+                    <div css={styles.dropdownList}>
+                      {OPTIONS.map((option, idx) => (
+                        <div
+                          key={idx}
+                          css={styles.dropdownItem}
+                          onClick={() => handleOptionSelect(index, option)}
+                        >
+                          {selectedOptions[index][option] ? (
+                            <div css={styles.dropdownSelectIconSelected}>
+                              <img src={checkWhite} alt='' />
+                            </div>
+                          ) : (
+                            <div css={styles.dropdownSelectIcon}></div>
+                          )}
+                          <span css={styles.dropdownItemText}>{option}</span>
+                        </div>
+                      ))}
+                    </div>
+                  )}
                 </div>
-                <div css={styles.dropdownSelectWrapper}>
-                  <div css={styles.dropdownSelectContainer}>
-                    <span css={styles.dropdownSelectTitle}>그래프</span>
-                    <div css={styles.dropdownDeleteContainer}>
-                      <img src={deleteIcon} alt='' />
+                <div css={styles.dropdownSelected}>
+                  {dropdownSelect.map((select, idx) => (
+                    <div css={styles.dropdownSelectContainer} key={idx}>
+                      <span css={styles.dropdownSelectTitle}>{select}</span>
+                      <div css={styles.dropdownDeleteContainer}>
+                        <img src={deleteIcon} alt='' />
+                      </div>
                     </div>
-                  </div>
-                  <div css={styles.dropdownSelectContainer}>
-                    <span css={styles.dropdownSelectTitle}>최단 경로</span>
-                    <div css={styles.dropdownDeleteContainer}>
-                      <img src={deleteIcon} alt='' />
-                    </div>
-                  </div>
+                  ))}
                 </div>
               </div>
               <div css={styles.bodyDelete}>
