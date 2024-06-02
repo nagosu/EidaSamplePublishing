@@ -46,20 +46,52 @@ const EditPage = () => {
   const [selectedOptions, setSelectedOptions] = useState(
     Array(evaluations.length).fill({})
   );
+  const [inputFocusGood, setInputFocusGood] = useState(
+    Array(evaluations.length).fill(false)
+  );
+  const [inputFocusBad, setInputFocusBad] = useState(
+    Array(evaluations.length).fill(false)
+  );
+  const [goodInputs, setGoodInputs] = useState(GOOD);
+  const [badInputs, setBadInputs] = useState(BAD);
 
-  const handleDropdownClick = (index) => {
+  const handleDropdownClick = (index: number) => {
     const newDropdownVisible = [...dropdownVisible];
     newDropdownVisible[index] = !newDropdownVisible[index];
     setDropdownVisible(newDropdownVisible);
   };
 
-  const handleOptionSelect = (evalIndex, option) => {
+  const handleOptionSelect = (evalIndex: number, option: number) => {
     const newSelectedOptions = [...selectedOptions];
     newSelectedOptions[evalIndex] = {
       ...newSelectedOptions[evalIndex],
       [option]: !newSelectedOptions[evalIndex][option],
     };
     setSelectedOptions(newSelectedOptions);
+  };
+
+  const handleInputFocus = (index: number, focused: boolean, type: string) => {
+    if (type === "good") {
+      const newInputFocusGood = [...inputFocusGood];
+      newInputFocusGood[index] = focused;
+      setInputFocusGood(newInputFocusGood);
+    } else {
+      const newInputFocusBad = [...inputFocusBad];
+      newInputFocusBad[index] = focused;
+      setInputFocusBad(newInputFocusBad);
+    }
+  };
+
+  const handleInputChange = (
+    index: number,
+    event: React.ChangeEvent<HTMLInputElement>,
+    setState: React.Dispatch<React.SetStateAction<string[]>>
+  ) => {
+    const newInputs = [
+      ...(setState === setGoodInputs ? goodInputs : badInputs),
+    ];
+    newInputs[index] = event.target.value;
+    setState(newInputs);
   };
 
   return (
@@ -99,10 +131,26 @@ const EditPage = () => {
                 <span css={styles.tableText}>{levels[index]}</span>
               </div>
               <div css={styles.bodyGood}>
-                <span css={styles.tableText}>{GOOD[index]}</span>
+                <input
+                  css={styles.bodyInput}
+                  type='text'
+                  value={goodInputs[index]}
+                  placeholder={inputFocusGood[index] ? "잘하고 있을 때" : ""}
+                  onFocus={() => handleInputFocus(index, true, "good")}
+                  onBlur={() => handleInputFocus(index, false, "good")}
+                  onChange={(e) => handleInputChange(index, e, setGoodInputs)}
+                />
               </div>
               <div css={styles.bodyBad}>
-                <span css={styles.tableText}>{BAD[index]}</span>
+                <input
+                  css={styles.bodyInput}
+                  type='text'
+                  value={badInputs[index]}
+                  placeholder={inputFocusBad[index] ? "부족한 경우" : ""}
+                  onFocus={() => handleInputFocus(index, true, "bad")}
+                  onBlur={() => handleInputFocus(index, false, "bad")}
+                  onChange={(e) => handleInputChange(index, e, setBadInputs)}
+                />
               </div>
               <div css={styles.bodyType}>
                 <div
@@ -155,6 +203,9 @@ const EditPage = () => {
             </div>
           ))}
         </div>
+        <button css={styles.addTable}>
+          <span css={styles.addTableText}>+ 평가항목 추가하기</span>
+        </button>
       </div>
     </div>
   );

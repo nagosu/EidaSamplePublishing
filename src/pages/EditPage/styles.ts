@@ -99,6 +99,31 @@ const styles = {
     justify-content: center;
     align-items: center;
   `,
+  bodyInput: css`
+    width: 100%;
+    font-family: "Pretendard";
+    font-size: 14px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.43;
+    letter-spacing: normal;
+    color: #000;
+    outline: none;
+    border: none;
+
+    &::placeholder {
+      opacity: 0.3;
+      font-family: "Pretendard";
+      font-size: 14px;
+      font-weight: normal;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.43;
+      letter-spacing: normal;
+      color: #000;
+    }
+  `,
   tableText: css`
     font-family: "Pretendard";
     font-size: 14px;
@@ -111,7 +136,7 @@ const styles = {
   `,
   tableBodyContainer: css`
     width: 100%;
-    height: calc(100% - 40px);
+    height: fit-content;
     display: flex;
     flex-direction: column;
     margin-bottom: 20px;
@@ -320,6 +345,23 @@ const styles = {
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
+  `,
+  addTable: css`
+    width: 100%;
+    height: 50px;
+    border-radius: 5px;
+    background-color: #eef1f8;
+  `,
+  addTableText: css`
+    font-family: "Pretendard";
+    font-size: 14px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.43;
+    letter-spacing: normal;
+    color: #000;
   `,
 };
 
