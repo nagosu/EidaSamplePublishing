@@ -10,6 +10,7 @@ import ModePage from "./pages/ModePage";
 import HistoryPage from "./pages/HistoryPage";
 import CountPage from "./pages/CountPage";
 import ServerPage from "./pages/ServerPage/ServerPage";
+import EditPage from "./pages/EditPage";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
         <Route path='/history' element={<HistoryPage />} />
         <Route path='/count' element={<CountPage />} />
         <Route path='/server' element={<ServerPage />} />
+        <Route path='/edit' element={<EditPage />} />
       </Routes>
     </Router>
   );
