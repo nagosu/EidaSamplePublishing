@@ -1,6 +1,8 @@
 /** @jsxImportSource @emotion/react */
 
 import { styles } from "./styles";
+import spectatorMode from "/assets/images/spectator-mode.svg";
+import studyingMode from "/assets/images/studying-mode.svg";
 
 const USER = {
   group: {
@@ -35,7 +37,9 @@ const ModePage = () => {
           </div>
         </div>
         <div className='profile_bottom watching'>
-          <div css={styles.headerWatching}></div>
+          <div css={styles.headerSpectator}>
+            <img src={spectatorMode} alt='' />
+          </div>
           <div className='profile_char'>
             <img src={`/assets/images/${USER.user.charImg}`} alt='' />
           </div>
@@ -62,7 +66,9 @@ const ModePage = () => {
           </div>
         </div>
         <div className='profile_bottom solving'>
-          <div css={styles.headerSolving}></div>
+          <div css={styles.headerStudying}>
+            <img css={styles.studying} src={studyingMode} alt='' />
+          </div>
           <div className='profile_char'>
             <img src={`/assets/images/${USER.user.charImg}`} alt='' />
           </div>

@@ -118,35 +118,54 @@ const styles = {
       position: relative;
     }
   `,
-  headerWatching: css`
+  headerSpectator: css`
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
     height: 34px;
-    background-image: linear-gradient(
-      271deg,
-      #6b04bb 0%,
-      rgba(107, 4, 187, 0) 100%
-    );
-    opacity: 0.5;
     position: absolute;
+    isolation: isolate;
     top: 0;
+
+    &::after {
+      content: "";
+      position: absolute;
+      background-image: linear-gradient(
+        271deg,
+        #6b04bb 0%,
+        rgba(107, 4, 187, 0) 100%
+      );
+      z-index: -1;
+      inset: 0;
+      opacity: 0.5;
+    }
   `,
-  headerSolving: css`
+  headerStudying: css`
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
     height: 34px;
-    background-image: linear-gradient(
-      271deg,
-      #005dff 0%,
-      rgba(0, 93, 255, 0) 100%
-    );
-    opacity: 0.5;
     position: absolute;
+    isolation: isolate;
     top: 0;
+
+    &::after {
+      content: "";
+      position: absolute;
+      background-image: linear-gradient(
+        271deg,
+        #005dff 0%,
+        rgba(0, 93, 255, 0) 100%
+      );
+      z-index: -1;
+      inset: 0;
+      opacity: 0.5;
+    }
+  `,
+  studying: css`
+    width: 75.2px;
   `,
 };
 
