@@ -6,6 +6,7 @@ import infoImage from "/assets/images/profile_img.svg";
 import downArrow from "/assets/images/down_arrow.png";
 import levelImage from "/assets/images/profile_sample2.png";
 import editPencil from "/assets/images/edit_pencil.png";
+import { useEffect, useRef, useState } from "react";
 
 // 평가항목 설명
 const evaluationItems = [
@@ -74,10 +75,89 @@ const progressItems = [
   "샘플 1회차 7번 cospro3급",
 ];
 
-const abilityValues = [100, 80, 60]; // Ability 슬라이더 value
-const skillValues = [40, 20]; // Skill 슬라이더 value
+// 타입 정의
+interface SliderProps {
+  initialValue: number;
+  onChange: (value: number) => void;
+}
+
+// 슬라이더 컴포넌트
+const Slider = ({ initialValue, onChange }: SliderProps) => {
+  const [value, setValue] = useState<number>(initialValue); // 슬라이더 값
+  const [isDragging, setIsDragging] = useState<boolean>(false); // 드래그 여부
+  const sliderRef = useRef<HTMLDivElement>(null); // 슬라이더 DOM
+
+  // 마우스를 눌렀을 때 이벤트 핸들러
+  const handleMouseDown = () => {
+    setIsDragging(true);
+  };
+
+  // 마우스를 뗐을 때 이벤트 핸들러
+  const handleMouseUp = () => {
+    if (isDragging) {
+      setIsDragging(false);
+    }
+  };
+
+  // 마우스를 움직였을 때 이벤트 핸들러
+  const handleMouseMove = (event: MouseEvent) => {
+    if (!isDragging) return;
+    if (sliderRef.current) {
+      const rect = sliderRef.current.getBoundingClientRect();
+      const newValue = Math.min(
+        Math.max(0, ((event.clientX - rect.left) / rect.width) * 100),
+        100
+      );
+      setValue(Math.round(newValue));
+      onChange(Math.round(newValue));
+    }
+  };
+
+  useEffect(() => {
+    if (isDragging) {
+      window.addEventListener("mousemove", handleMouseMove);
+      window.addEventListener("mouseup", handleMouseUp);
+    } else {
+      window.removeEventListener("mousemove", handleMouseMove);
+      window.removeEventListener("mouseup", handleMouseUp);
+    }
+
+    return () => {
+      window.removeEventListener("mousemove", handleMouseMove);
+      window.removeEventListener("mouseup", handleMouseUp);
+    };
+  }, [isDragging]);
+
+  return (
+    <div
+      css={styles.sliderContainer}
+      ref={sliderRef}
+      onMouseDown={handleMouseDown}
+    >
+      <div css={styles.sliderTrack(value)}></div>
+      <div css={styles.sliderThumb(value)}>
+        <span css={styles.sliderThumbNumber}>{value}</span>
+      </div>
+    </div>
+  );
+};
 
 const ReportPage = () => {
+  const [abilityValues, setAbilityValues] = useState<number[]>([50, 50, 50]);
+  const [skillValues, setSkillValues] = useState<number[]>([50, 50]);
+
+  const handleAbilityChange = (index: number, newValue: number) => {
+    const updatedValues = [...abilityValues];
+    updatedValues[index] = newValue;
+    setAbilityValues(updatedValues);
+  };
+
+  const handleSkillChange = (index: number, newValue: number) => {
+    const updatedValues = [...skillValues];
+    updatedValues[index] = newValue;
+    setSkillValues(updatedValues);
+  };
+
   return (
     <div css={styles.reportContainer}>
       <div css={styles.reportHeader}>
@@ -186,25 +266,19 @@ const ReportPage = () => {
             </div>
           </div>
           <div css={styles.scoreContainer}>
-            <div css={styles.areaLevelItem}>
-              <span css={styles.areaLevelText}>100</span>
-            </div>
-            <div css={styles.areaLevelItem}>
-              <span css={styles.areaLevelText}>75</span>
-            </div>
-            <div css={styles.areaLevelItem}>
-              <span css={styles.areaLevelText}>80</span>
-            </div>
+            {abilityValues.map((value, index) => (
+              <div key={index} css={styles.areaLevelItem}>
+                <span css={styles.areaLevelText}>{value}</span>
+              </div>
+            ))}
           </div>
           <div css={styles.levelContainer}>
-            {abilityValues.map((progress, index) => (
+            {abilityValues.map((value, index) => (
               <div key={index} css={styles.levelItemContainer}>
-                <div css={styles.sliderContainer}>
-                  <div css={styles.sliderTrack(progress)}></div>
-                  <div css={styles.sliderThumb(progress)}>
-                    <span css={styles.sliderThumbNumber}>{progress}</span>
-                  </div>
-                </div>
+                <Slider
+                  initialValue={value}
+                  onChange={(newValue) => handleAbilityChange(index, newValue)}
+                />
               </div>
             ))}
           </div>
@@ -222,22 +296,19 @@ const ReportPage = () => {
             </div>
           </div>
           <div css={styles.scoreContainer}>
-            <div css={styles.areaLevelItem}>
-              <span css={styles.areaLevelText}>75</span>
-            </div>
-            <div css={styles.areaLevelItem}>
-              <span css={styles.areaLevelText}>88</span>
-            </div>
+            {skillValues.map((value, index) => (
+              <div key={index} css={styles.areaLevelItem}>
+                <span css={styles.areaLevelText}>{value}</span>
+              </div>
+            ))}
           </div>
           <div css={styles.levelContainer}>
-            {skillValues.map((progress, index) => (
+            {skillValues.map((value, index) => (
               <div key={index} css={styles.levelItemContainer}>
-                <div css={styles.sliderContainer}>
-                  <div css={styles.sliderTrack(progress)}></div>
-                  <div css={styles.sliderThumb(progress)}>
-                    <span css={styles.sliderThumbNumber}>{progress}</span>
-                  </div>
-                </div>
+                <Slider
+                  initialValue={value}
+                  onChange={(newValue) => handleSkillChange(index, newValue)}
+                />
               </div>
             ))}
           </div>

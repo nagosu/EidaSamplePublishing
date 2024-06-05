@@ -466,7 +466,7 @@ const styles = {
   `,
   sliderThumb: (progress: number) => css`
     position: absolute;
-    transform: translate(-100%, -50%);
+    transform: translate(-${progress}%, -50%);
     top: 50%;
     left: ${progress}%;
     width: 26px;
@@ -477,6 +477,7 @@ const styles = {
     display: flex;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
   `,
   sliderThumbNumber: css`
     font-family: "Pretendard";
